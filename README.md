@@ -1,30 +1,30 @@
-# Patil-NGO-application
-Patil NGO Website and Admin CMS built using Python Flask. Includes a dynamic home page, banner slider, vision &amp; mission manager, statistics, initiatives, and full admin dashboard with CRUD features. Supports image uploads, SQLite database, and easy deployment on Render, Railway, or Heroku.
-# Patil NGO Website (Python Flask + Admin CMS)
+# Patil NGO - Flask Project (with Admin UI)
 
-This repository contains the complete dynamic website and admin CMS 
-for Patil NGO, built using Python Flask, SQLite, Tailwind, and HTML/JS.
+## What is included
+- Flask backend (SQLite) with APIs for banners, vision/mission, statistics, initiatives
+- Simple Admin UI (static pages) to manage content (demo login: admin/admin)
+- File uploads saved to /uploads
+- Procfile for deployment with gunicorn
+- seed.py to populate sample data
 
-## Features
-- Dynamic home page (Banner, Vision/Mission, Stats, Initiatives)
-- Admin panel (Login + Dashboard)
-- CRUD operations for all homepage sections
-- File upload support (images)
-- SQLite database (included in /instance)
-- Ready for deployment (Render / Heroku / Railway)
+## How to run locally
+1. Create virtualenv and install:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # or venv\Scripts\activate on Windows
+   pip install -r requirements.txt
+   ```
+2. Seed the DB (optional):
+   ```
+   python seed.py
+   ```
+3. Run:
+   ```
+   python app.py
+   ```
+4. Open http://127.0.0.1:5000 for site, http://127.0.0.1:5000/admin for admin login.
 
-## Installation
-pip install -r requirements.txt
-python seed.py
-python app.py
+## Deploy
+- You can deploy to Render / Railway / Heroku by connecting a GitHub repo and using the Procfile.
+- Use Python runtime, and the web command in Procfile.
 
-## Admin Login
-Username: admin  
-Password: admin
-
-## Deployment (Render)
-Build command:
-pip install -r requirements.txt
-
-Start command:
-gunicorn app:create_app()
